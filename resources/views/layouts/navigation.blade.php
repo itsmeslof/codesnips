@@ -34,7 +34,7 @@
                         <button
                             class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-zinc-500 bg-white dark:bg-zinc-800 hover:text-zinc-700 dark:hover:text-zinc-300 focus:outline-none transition ease-in-out duration-150"
                         >
-                            <div>{{ Auth::user()->name }}</div>
+                            <div>{{ Auth::user()->username }}</div>
 
                             <div class="ml-1">
                                 <svg
@@ -127,7 +127,7 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-zinc-200 dark:border-zinc-600">
             <div class="px-4">
-                <div class="font-medium text-base text-zinc-800 dark:text-zinc-200">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-base text-zinc-800 dark:text-zinc-200">{{ Auth::user()->username }}</div>
                 <div class="font-medium text-sm text-zinc-500">{{ Auth::user()->email }}</div>
             </div>
 

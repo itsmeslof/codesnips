@@ -8,20 +8,20 @@
         <!-- Name -->
         <div>
             <x-input-label
-                for="name"
-                :value="__('Name')"
+                for="username"
+                :value="__('Username')"
             />
             <x-text-input
-                id="name"
+                id="username"
                 class="block mt-1 w-full"
                 type="text"
-                name="name"
-                :value="old('name')"
+                name="username"
+                :value="old('username')"
                 required
                 autofocus
             />
             <x-input-error
-                :messages="$errors->get('name')"
+                :messages="$errors->get('username')"
                 class="mt-2"
             />
         </div>

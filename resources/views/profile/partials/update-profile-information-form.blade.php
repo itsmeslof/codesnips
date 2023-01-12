@@ -27,22 +27,22 @@
 
         <div>
             <x-input-label
-                for="name"
-                :value="__('Name')"
+                for="username"
+                :value="__('Username')"
             />
             <x-text-input
-                id="name"
-                name="name"
+                id="username"
+                name="username"
                 type="text"
                 class="mt-1 block w-full"
-                :value="old('name', $user->name)"
+                :value="old('username', $user->username)"
                 required
                 autofocus
-                autocomplete="name"
+                autocomplete="username"
             />
             <x-input-error
                 class="mt-2"
-                :messages="$errors->get('name')"
+                :messages="$errors->get('username')"
             />
         </div>
 
@@ -54,7 +54,7 @@
             <x-text-input
                 id="email"
                 name="email"
-                type="email"
+                type="text"
                 class="mt-1 block w-full"
                 :value="old('email', $user->email)"
                 required
