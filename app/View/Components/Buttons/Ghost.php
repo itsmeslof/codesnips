@@ -6,7 +6,7 @@ use App\View\Components\Buttons\BaseButton;
 
 class Ghost extends BaseButton
 {
-    const STYLES = 'rounded-md text-zinc-50 bg-transparent border-2 border-transparent hover:bg-black/40 hover:border-zinc-500 active:bg-black/60 focus:bg-black/60 active:border-zinc-500 focus:border-zinc-500 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-2 focus:ring-0 focus:ring-offset-0';
+    const STYLES = 'rounded-md text-zinc-50 bg-transparent border-2 border-transparent hover:bg-black/40 hover:border-zinc-500 active:bg-black/60 focus:bg-black/60 active:border-zinc-500 focus:border-zinc-500';
 
     public function getClasslist(string $size): string
     {

@@ -11,7 +11,7 @@ abstract class BaseButton extends Component
      *
      * @var string
      */
-    const BASE_CLASSES = 'inline-flex items-center font-semibold transition ease-in-out duration-150';
+    const BASE_CLASSES = 'inline-flex items-center font-semibold transition ease-in-out duration-150 focusable';
 
     /**
      * Size-specific classes.
