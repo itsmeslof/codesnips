@@ -10,7 +10,6 @@ class Anchor extends BaseLink
 
     public function getClasslist(string $size): string
     {
-        $sizeClasses = static::SIZE_CLASSES[$size] ?? static::SIZE_CLASSES['md'];
-        return self::STYLES . " {$sizeClasses}";
+        return self::STYLES;
     }
 }

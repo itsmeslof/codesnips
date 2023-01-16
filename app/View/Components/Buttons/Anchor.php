@@ -3,7 +3,6 @@
 namespace App\View\Components\Buttons;
 
 use App\View\Components\Buttons\BaseButton;
-use App\View\Components\Links\BaseLink;
 
 class Anchor extends BaseButton
 {
@@ -11,7 +10,6 @@ class Anchor extends BaseButton
 
     public function getClasslist(string $size): string
     {
-        $sizeClasses = BaseLink::SIZE_CLASSES[$size] ?? BaseLink::SIZE_CLASSES['md'];
-        return self::STYLES . " {$sizeClasses}";
+        return self::STYLES;
     }
 }
