@@ -11,7 +11,7 @@ abstract class BaseLink extends Component
      *
      * @var string
      */
-    const BASE_CLASSES = 'inline-flex items-center font-semibold transition ease-in-out duration-150 focusable';
+    const BASE_CLASSES = 'inline-flex items-center font-semibold transition ease-in-out duration-150 focusable underline';
 
     /**
      * Size-specific classes.
