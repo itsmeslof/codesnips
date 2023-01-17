@@ -24,7 +24,7 @@ class Text extends Component
     ];
 
     /**
-     * The final computed classlist for a button.
+     * The final computed classlist for a Text input.
      *
      * @var string
      */
