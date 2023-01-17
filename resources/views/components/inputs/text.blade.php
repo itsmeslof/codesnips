@@ -1,4 +1,1 @@
-<input
-    type="text"
-    {{ $attributes->merge(['class' => $computedClasses]) }}
->
+<input {{ $attributes->merge(['class' => $computedClasses]) }}>
