@@ -7,11 +7,11 @@
 
         <!-- Name -->
         <div>
-            <x-input-label
-                for="username"
-                :value="__('Username')"
-            />
-            <x-text-input
+            <x-inputs.label for="username">
+                {{ __('Username') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="username"
                 class="block mt-1 w-full"
                 type="text"
@@ -28,11 +28,11 @@
 
         <!-- Email Address -->
         <div class="mt-4">
-            <x-input-label
-                for="email"
-                :value="__('Email')"
-            />
-            <x-text-input
+            <x-inputs.label for="email">
+                {{ __('Email') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="email"
                 class="block mt-1 w-full"
                 type="email"
@@ -48,12 +48,11 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label
-                for="password"
-                :value="__('Password')"
-            />
+            <x-inputs.label for="password">
+                {{ __('Password') }}
+            </x-inputs.label>
 
-            <x-text-input
+            <x-inputs.text
                 id="password"
                 class="block mt-1 w-full"
                 type="password"
@@ -70,12 +69,11 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label
-                for="password_confirmation"
-                :value="__('Confirm Password')"
-            />
+            <x-inputs.label for="password_confirmation">
+                {{ __('Confirm Password') }}
+            </x-inputs.label>
 
-            <x-text-input
+            <x-inputs.text
                 id="password_confirmation"
                 class="block mt-1 w-full"
                 type="password"
@@ -90,9 +88,9 @@
         </div>
 
         <div class="flex items-center justify-end mt-8">
-            <x-primary-button class="ml-4">
+            <x-buttons.primary class="ml-4">
                 {{ __('Register') }}
-            </x-primary-button>
+            </x-buttons.primary>
         </div>
 
         <div class="h-[1px] w-full bg-zinc-600 my-10"></div>

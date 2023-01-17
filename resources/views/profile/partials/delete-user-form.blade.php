@@ -36,13 +36,14 @@
             </p>
 
             <div class="mt-6">
-                <x-input-label
+                <x-inputs.label
                     for="password"
-                    value="Password"
                     class="sr-only"
-                />
+                >
+                    {{ __('Password') }}
+                </x-inputs.label>
 
-                <x-text-input
+                <x-inputs.text
                     id="password"
                     name="password"
                     type="password"
@@ -57,9 +58,12 @@
             </div>
 
             <div class="mt-6 flex justify-end">
-                <x-secondary-button x-on:click="$dispatch('close')">
+                <x-buttons.secondary
+                    type="button"
+                    x-on:click="$dispatch('close')"
+                >
                     {{ __('Cancel') }}
-                </x-secondary-button>
+                </x-buttons.secondary>
 
                 <x-danger-button class="ml-3">
                     {{ __('Delete Account') }}

@@ -18,11 +18,11 @@
         @method('put')
 
         <div>
-            <x-input-label
-                for="current_password"
-                :value="__('Current Password')"
-            />
-            <x-text-input
+            <x-inputs.label for="current_password">
+                {{ __('Current Password') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="current_password"
                 name="current_password"
                 type="password"
@@ -36,11 +36,11 @@
         </div>
 
         <div>
-            <x-input-label
-                for="password"
-                :value="__('New Password')"
-            />
-            <x-text-input
+            <x-inputs.label for="password">
+                {{ __('New Password') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="password"
                 name="password"
                 type="password"
@@ -54,11 +54,11 @@
         </div>
 
         <div>
-            <x-input-label
-                for="password_confirmation"
-                :value="__('Confirm Password')"
-            />
-            <x-text-input
+            <x-inputs.label for="password_confirmation">
+                {{ __('Confirm Password') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="password_confirmation"
                 name="password_confirmation"
                 type="password"
@@ -72,7 +72,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-buttons.primary>{{ __('Save') }}</x-buttons.primary>
 
             @if (session('status') === 'password-updated')
                 <p

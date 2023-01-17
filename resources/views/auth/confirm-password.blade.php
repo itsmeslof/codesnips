@@ -11,12 +11,11 @@
 
         <!-- Password -->
         <div>
-            <x-input-label
-                for="password"
-                :value="__('Password')"
-            />
+            <x-inputs.label for="password">
+                {{ __('Password') }}
+            </x-inputs.label>
 
-            <x-text-input
+            <x-inputs.text
                 id="password"
                 class="block mt-1 w-full"
                 type="password"
@@ -32,9 +31,9 @@
         </div>
 
         <div class="flex justify-end mt-8">
-            <x-primary-button>
+            <x-buttons.primary>
                 {{ __('Confirm') }}
-            </x-primary-button>
+            </x-buttons.primary>
         </div>
     </form>
 </x-guest-layout>

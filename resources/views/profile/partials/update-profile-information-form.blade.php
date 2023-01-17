@@ -26,11 +26,11 @@
         @method('patch')
 
         <div>
-            <x-input-label
-                for="username"
-                :value="__('Username')"
-            />
-            <x-text-input
+            <x-inputs.label for="username">
+                {{ __('Username') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="username"
                 name="username"
                 type="text"
@@ -47,11 +47,11 @@
         </div>
 
         <div>
-            <x-input-label
-                for="email"
-                :value="__('Email')"
-            />
-            <x-text-input
+            <x-inputs.label for="email">
+                {{ __('Email') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="email"
                 name="email"
                 type="text"
@@ -88,7 +88,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-buttons.primary>{{ __('Save') }}</x-buttons.primary>
 
             @if (session('status') === 'profile-updated')
                 <p

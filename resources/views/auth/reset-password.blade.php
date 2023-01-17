@@ -14,11 +14,11 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label
-                for="email"
-                :value="__('Email')"
-            />
-            <x-text-input
+            <x-inputs.label for="email">
+                {{ __('Email') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="email"
                 class="block mt-1 w-full"
                 type="email"
@@ -35,11 +35,11 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label
-                for="password"
-                :value="__('Password')"
-            />
-            <x-text-input
+            <x-inputs.label for="password">
+                {{ __('Password') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="password"
                 class="block mt-1 w-full"
                 type="password"
@@ -54,12 +54,11 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label
-                for="password_confirmation"
-                :value="__('Confirm Password')"
-            />
+            <x-inputs.label for="password_confirmation">
+                {{ __('Confirm Password') }}
+            </x-inputs.label>
 
-            <x-text-input
+            <x-inputs.text
                 id="password_confirmation"
                 class="block mt-1 w-full"
                 type="password"
@@ -74,9 +73,9 @@
         </div>
 
         <div class="flex items-center justify-end mt-8">
-            <x-primary-button>
+            <x-buttons.primary>
                 {{ __('Reset Password') }}
-            </x-primary-button>
+            </x-buttons.primary>
         </div>
     </form>
 </x-guest-layout>

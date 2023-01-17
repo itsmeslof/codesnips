@@ -17,11 +17,11 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label
-                for="email"
-                :value="__('Email')"
-            />
-            <x-text-input
+            <x-inputs.label for="email">
+                {{ __('Email') }}
+            </x-inputs.label>
+
+            <x-inputs.text
                 id="email"
                 class="block mt-1 w-full"
                 type="email"
@@ -37,9 +37,9 @@
         </div>
 
         <div class="flex items-center justify-end mt-8">
-            <x-primary-button>
+            <x-buttons.primary>
                 {{ __('Email Password Reset Link') }}
-            </x-primary-button>
+            </x-buttons.primary>
         </div>
     </form>
 </x-guest-layout>
