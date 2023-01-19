@@ -19,8 +19,8 @@ abstract class BaseButton extends Component
      * @var array<string, string>
      */
     const SIZE_CLASSES = [
-        'sm' => 'text-sm px-3 py-1',
-        'md' => 'text-md px-6 py-2',
+        'sm' => 'text-sm px-2 py-1',
+        'md' => 'text-md px-3 py-2',
     ];
 
     /**
