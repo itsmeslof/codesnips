@@ -6,11 +6,38 @@ use App\View\Components\Buttons\BaseButton;
 
 class Secondary extends BaseButton
 {
-    const STYLES = 'rounded-md text-zinc-50 bg-black/20 border-2 border-zinc-600 hover:bg-black/40 hover:border-zinc-500 active:bg-black/60 focus:bg-black/60 active:border-zinc-500 focus:border-zinc-500';
+    const NORMAL_STYLES = 'rounded-md text-zinc-100 bg-zinc-600 border-2 border-transparent';
+    const HOVER_STYLES = 'hover:bg-zinc-500 hover:text-white';
+    const ACTIVE_STYLES = 'active:bg-zinc-700 active:text-white';
+    const FOCUS_STYLES = 'focus:bg-zinc-700';
+    const DISABLED_STYLES = '';
 
-    public function getClasslist(string $size): string
+    /**
+     * Get the variant-specific classes for a Secondary button.
+     *
+     * @return string
+     */
+    public function getVariantClasses(): string
     {
-        $sizeClasses = static::SIZE_CLASSES[$size] ?? static::SIZE_CLASSES['md'];
-        return self::STYLES . " {$sizeClasses}";
+        $sizeClasses = $this->getSizeClasses();
+
+        return sprintf(
+            "%s %s %s %s %s",
+            self::NORMAL_STYLES,
+            self::HOVER_STYLES,
+            self::ACTIVE_STYLES,
+            self::FOCUS_STYLES,
+            $sizeClasses,
+        );
+    }
+
+    /**
+     * Render the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+    {
+        return view('components.button');
     }
 }

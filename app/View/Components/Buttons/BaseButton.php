@@ -2,12 +2,12 @@
 
 namespace App\View\Components\Buttons;
 
-use Illuminate\View\Component;
+use App\View\Components\AbstractComponent;
 
-abstract class BaseButton extends Component
+abstract class BaseButton extends AbstractComponent
 {
     /**
-     * Base classes shared across all buttons.
+     * Base classes that apply to all buttons.
      *
      * @var string
      */
@@ -19,23 +19,23 @@ abstract class BaseButton extends Component
      * @var array<string, string>
      */
     const SIZE_CLASSES = [
-        'sm' => 'text-sm px-2 py-1',
-        'md' => 'text-md px-3 py-2',
+        'sm' => 'text-sm px-3 py-1.5',
+        'md' => 'text-base px-4 py-2',
     ];
 
     /**
-     * Get the class list for the specific button type.
-     *
-     * @return string
-     */
-    abstract public function getClasslist(string $size): string;
-
-    /**
-     * The final computed classlist for a button.
+     * The size of the button.
      *
      * @var string
      */
-    public $computedClasses = '';
+    protected $size = 'md';
+
+    /**
+     * Get the variant-specific classes for a button.
+     *
+     * @return string
+     */
+    abstract public function getVariantClasses(): string;
 
     /**
      * Create a new component instance.
@@ -44,14 +44,32 @@ abstract class BaseButton extends Component
      */
     public function __construct(string $size = 'md')
     {
-        $baseClasses = self::BASE_CLASSES;
-        $buttonTypeClasses = $this->getClassList($size);
-
-        $this->computedClasses = "{$baseClasses} {$buttonTypeClasses}";
+        $this->size = $size;
+        $this->prepareForRender();
     }
 
-    public function render()
+    /**
+     * Get the final computed classes for a button.
+     *
+     * @return string
+     */
+    public function getComputedClasses(): string
     {
-        return view('components.button');
+        return sprintf(
+            "%s %s",
+            self::BASE_CLASSES,
+            $this->getVariantClasses()
+        );
+    }
+
+    /**
+     * Get the size-specific classes for a button.
+     *
+     * @return string
+     */
+    public function getSizeClasses(): string
+    {
+        $default = self::SIZE_CLASSES['md'];
+        return self::SIZE_CLASSES[$this->size] ?? $default;
     }
 }
