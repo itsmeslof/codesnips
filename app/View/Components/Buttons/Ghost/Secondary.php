@@ -4,7 +4,7 @@ namespace App\View\Components\Buttons\Ghost;
 
 use App\View\Components\Buttons\Ghost\BaseGhostButton;
 
-class Standard extends BaseGhostButton
+class Secondary extends BaseGhostButton
 {
     const NORMAL_STYLES = 'rounded-md text-zinc-200 bg-transparent border-2 border-transparent';
     const HOVER_STYLES = 'hover:text-white hover:bg-zinc-200/5';
