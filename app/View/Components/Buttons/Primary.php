@@ -12,32 +12,17 @@ class Primary extends BaseButton
     const FOCUS_STYLES = 'focus:bg-cyan-700';
     const DISABLED_STYLES = '';
 
-    /**
-     * Get the variant-specific classes for a Primary button.
-     *
-     * @return string
-     */
     public function getVariantClasses(): string
     {
         $sizeClasses = $this->getSizeClasses();
 
         return sprintf(
             "%s %s %s %s %s",
-            self::NORMAL_STYLES,
-            self::HOVER_STYLES,
-            self::ACTIVE_STYLES,
-            self::FOCUS_STYLES,
+            $this::NORMAL_STYLES,
+            $this::HOVER_STYLES,
+            $this::ACTIVE_STYLES,
+            $this::FOCUS_STYLES,
             $sizeClasses,
         );
-    }
-
-    /**
-     * Render the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
-     */
-    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
-    {
-        return view('components.button');
     }
 }

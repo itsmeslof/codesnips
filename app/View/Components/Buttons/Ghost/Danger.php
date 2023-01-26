@@ -2,13 +2,27 @@
 
 namespace App\View\Components\Buttons\Ghost;
 
-use App\View\Components\Buttons\Ghost\BaseGhostButton;
+use App\View\Components\Buttons\BaseButton;
 
-class Danger extends BaseGhostButton
+class Danger extends BaseButton
 {
     const NORMAL_STYLES = 'rounded-md text-rose-500 bg-transparent border-2 border-transparent';
     const HOVER_STYLES = 'hover:text-rose-400 hover:bg-rose-500/10';
     const ACTIVE_STYLES = 'active:text-rose-400 active:bg-rose-700/10';
     const FOCUS_STYLES = 'focus:text-rose-400 focus:bg-rose-700/10';
     const DISABLED_STYLES = '';
+
+    public function getVariantClasses(): string
+    {
+        $sizeClasses = $this->getSizeClasses();
+
+        return sprintf(
+            "%s %s %s %s %s",
+            $this::NORMAL_STYLES,
+            $this::HOVER_STYLES,
+            $this::ACTIVE_STYLES,
+            $this::FOCUS_STYLES,
+            $sizeClasses,
+        );
+    }
 }
