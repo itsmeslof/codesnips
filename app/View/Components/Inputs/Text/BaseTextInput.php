@@ -2,48 +2,40 @@
 
 namespace App\View\Components\Inputs\Text;
 
-use Illuminate\View\Component;
+use App\View\Components\AbstractComponent;
 
-abstract class BaseTextInput extends Component
+abstract class BaseTextInput extends AbstractComponent
 {
     /**
-     * Base classes shared across all text inputs.
+     * Base classes that apply to all text-based inputs.
      *
      * @var string
      */
-    const BASE_CLASSES = 'inline-flex items-center font-semibold transition ease-in-out duration-150 rounded-md  focus:outline focus:outline-2 focus:outline-white focus:outline-offset-2 focus:ring-0 focus:ring-offset-0';
+    const BASE_CLASSES = 'inline-flex items-center font-semibold transition ease-in-out duration-150 rounded-md focusable';
+
+    public function __construct()
+    {
+        $this->prepareForRender();
+    }
 
     /**
-     * The final computed classlist for a Text input.
-     *
-     * @var string
-     */
-    public $computedClasses = '';
-
-    /**
-     * Get the class list for the specific button type.
+     * Get the variant-specific classes for a text-based input.
      *
      * @return string
      */
-    abstract public function getClasslist(): string;
-
-    abstract public function getView(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory;
+    abstract public function getVariantClasses(): string;
 
     /**
-     * Create a new component instance.
+     * Get the final computed classes for a text-based input.
      *
-     * @return void
+     * @return string
      */
-    public function __construct()
+    public function getComputedClasses(): string
     {
-        $baseClasses = self::BASE_CLASSES;
-        $inputTypeClasses = $this->getClasslist();
-
-        $this->computedClasses = "{$baseClasses} {$inputTypeClasses}";
-    }
-
-    public function render()
-    {
-        return $this->getView();
+        return sprintf(
+            "%s %s",
+            self::BASE_CLASSES,
+            $this->getVariantClasses()
+        );
     }
 }
