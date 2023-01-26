@@ -5,3 +5,11 @@
 .focusable {
     @apply focus:outline focus:outline-2 focus:outline-white focus:outline-offset-2 focus:ring-0 focus:ring-offset-0;
 }
+
+.tab-focusable {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 focus-visible:ring-0 focus-visible:ring-offset-0;
+}
+
+[x-cloak] {
+    display: none !important;
+}
