@@ -19,7 +19,7 @@
             >
                 {{ __('Email') }}
             </x-inputs.label>
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="email"
                 class="block mt-1 w-full"
                 type="email"
@@ -44,7 +44,7 @@
                 {{ __('Password') }}
             </x-inputs.label>
 
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="password"
                 class="block mt-1 w-full"
                 type="password"

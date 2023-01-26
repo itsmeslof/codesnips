@@ -21,7 +21,7 @@
                 {{ __('Email') }}
             </x-inputs.label>
 
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="email"
                 class="block mt-1 w-full"
                 type="email"

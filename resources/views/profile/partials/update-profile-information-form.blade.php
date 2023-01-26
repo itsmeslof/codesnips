@@ -30,7 +30,7 @@
                 {{ __('Username') }}
             </x-inputs.label>
 
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="username"
                 name="username"
                 type="text"
@@ -51,7 +51,7 @@
                 {{ __('Email') }}
             </x-inputs.label>
 
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="email"
                 name="email"
                 type="text"

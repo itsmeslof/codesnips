@@ -22,7 +22,7 @@
                 {{ __('Current Password') }}
             </x-inputs.label>
 
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="current_password"
                 name="current_password"
                 type="password"
@@ -40,7 +40,7 @@
                 {{ __('New Password') }}
             </x-inputs.label>
 
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="password"
                 name="password"
                 type="password"
@@ -58,7 +58,7 @@
                 {{ __('Confirm Password') }}
             </x-inputs.label>
 
-            <x-inputs.text
+            <x-inputs.text.standard
                 id="password_confirmation"
                 name="password_confirmation"
                 type="password"

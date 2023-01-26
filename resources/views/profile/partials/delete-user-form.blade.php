@@ -43,7 +43,7 @@
                     {{ __('Password') }}
                 </x-inputs.label>
 
-                <x-inputs.text
+                <x-inputs.text.standard
                     id="password"
                     name="password"
                     type="password"
