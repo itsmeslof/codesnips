@@ -72,4 +72,14 @@ abstract class BaseButton extends AbstractComponent
         $default = self::SIZE_CLASSES['md'];
         return self::SIZE_CLASSES[$this->size] ?? $default;
     }
+
+    /**
+     * Render the component
+     *
+     * @return void
+     */
+    public function render()
+    {
+        return view('components.button');
+    }
 }
