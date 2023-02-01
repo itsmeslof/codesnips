@@ -2,16 +2,16 @@
 
 namespace App\View\Components\Links;
 
-use Illuminate\View\Component;
+use App\View\Components\AbstractComponent;
 
-abstract class BaseLink extends Component
+abstract class BaseLink extends AbstractComponent
 {
     /**
      * Base classes shared across all links.
      *
      * @var string
      */
-    const BASE_CLASSES = 'inline-flex items-center font-semibold transition ease-in-out duration-150 focusable underline';
+    const BASE_CLASSES = 'inline-flex items-center transition ease-in-out duration-150 focusable underline-offset-4 hover:decoration-2';
 
     /**
      * Size-specific classes.
@@ -21,21 +21,22 @@ abstract class BaseLink extends Component
     const SIZE_CLASSES = [
         'sm' => 'text-sm',
         'md' => 'text-md',
+        'lg' => 'text-lg',
     ];
 
     /**
-     * Get the class list for the specific link type.
-     *
-     * @return string
-     */
-    abstract public function getClasslist(string $size): string;
-
-    /**
-     * The final computed classlist for a link.
+     * The size of the link.
      *
      * @var string
      */
-    public $computedClasses = '';
+    protected $size = 'md';
+
+    /**
+     * Get the variant-specific classes for a link.
+     *
+     * @return string
+     */
+    abstract public function getVariantClasses(): string;
 
     /**
      * Create a new component instance.
@@ -44,10 +45,33 @@ abstract class BaseLink extends Component
      */
     public function __construct(string $size = 'md')
     {
-        $baseClassList = self::BASE_CLASSES;
-        $linkTypeClassList = $this->getClassList($size);
+        $this->size = $size;
+        $this->prepareForRender();
+    }
 
-        $this->computedClasses = "{$baseClassList} {$linkTypeClassList}";
+    /**
+     * Get the final computed classes for a link.
+     *
+     * @return string
+     */
+    public function getComputedClasses(): string
+    {
+        return sprintf(
+            "%s %s",
+            self::BASE_CLASSES,
+            $this->getVariantClasses()
+        );
+    }
+
+    /**
+     * Get the size-specific classes for a link.
+     *
+     * @return string
+     */
+    public function getSizeClasses(): string
+    {
+        $default = self::SIZE_CLASSES['md'];
+        return self::SIZE_CLASSES[$this->size] ?? $default;
     }
 
     public function render()

@@ -2,12 +2,12 @@
 
 namespace App\View\Components\Links;
 
-class Anchor extends BaseLink
+class Primary extends BaseLink
 {
-    const NORMAL_STYLES = 'font-semibold text-zinc-400 underline';
-    const HOVER_STYLES = 'hover:text-zinc-200 hover:bg-white/10';
-    const FOCUS_STYLES = 'focus:text-white focus:bg-white/10';
-    const ACTIVE_STYLES = 'active:text-white active:bg-white/25';
+    const NORMAL_STYLES = 'font-bold text-cyan-500 underline';
+    const HOVER_STYLES = 'hover:text-cyan-400 hover:bg-cyan-500/10';
+    const FOCUS_STYLES = 'focus:text-cyan-400 focus:bg-cyan-500/10';
+    const ACTIVE_STYLES = 'active:text-cyan-400 active:bg-cyan-500/25';
 
     public function getVariantClasses(): string
     {
